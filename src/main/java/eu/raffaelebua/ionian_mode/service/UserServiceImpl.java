@@ -2,9 +2,13 @@ package eu.raffaelebua.ionian_mode.service;
 
 import eu.raffaelebua.ionian_mode.dao.UserDao;
 import eu.raffaelebua.ionian_mode.model.User;
+import eu.raffaelebua.ionian_mode.model.UserProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Service("userService")
 @Transactional
@@ -19,6 +23,14 @@ public class UserServiceImpl implements UserService{
 
 	public User findBySso(String sso) {
 		return dao.findBySSO(sso);
+	}
+
+	public void createUser(User user){
+
+		dao.createUser(user);
+
+
+		// send email
 	}
 
 }

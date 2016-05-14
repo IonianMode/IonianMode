@@ -18,5 +18,10 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 		return (User) crit.uniqueResult();
 	}
 
+	public int createUser(User user){
+		this.save(user);
+		return 0;
+	}
+
 	
 }
